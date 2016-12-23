@@ -15,7 +15,7 @@
 ```
 ##property
 ```javascript
-	$scope.yzpDrag.onDrag=true;ondrag 
+	$scope.yzpDrag.onDrag=true;
 	$scope.yzpDrag.mousedownstartX=event.clientX;
 	$scope.yzpDrag.mousedownstartY=event.clientY;
 	$scope.yzpDrag.elementstartX=$scope.x;
