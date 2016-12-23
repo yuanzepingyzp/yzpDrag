@@ -13,3 +13,11 @@
 	</body>
 </html>
 ```
+##property
+```javascript
+	$scope.yzpDrag.onDrag=true;ondrag 
+	$scope.yzpDrag.mousedownstartX=event.clientX;
+	$scope.yzpDrag.mousedownstartY=event.clientY;
+	$scope.yzpDrag.elementstartX=$scope.x;
+	$scope.yzpDrag.elementstartY=$scope.y;
+```
