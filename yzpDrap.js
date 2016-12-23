@@ -3,20 +3,24 @@ yzpDrag.directive("yzpDrag",function(){
 	return{
 		restrict:'A',
 		link:function($scope,$elm,$attrs){
-			$elm.bind("mousedown",function(){
-				$scope.onDrag=true;
+			$scope.yzpDrag={};
+			$elm.bind("mousedown",function(event){
+				$scope.yzpDrag.onDrag=true;
+				$scope.yzpDrag.mousedownstartX=event.clientX;
+				$scope.yzpDrag.mousedownstartY=event.clientY;
+				$scope.yzpDrag.elementstartX=$scope.x;
+				$scope.yzpDrag.elementstartY=$scope.y;
 			});
-			$elm.bind("mousemove",function(){
-				if($scope.onDrag){
-					console.log("happen!");
-					$scope.$apply(function(){ /*将指令的上下文指向scope*/
-          $scope.$eval($attrs.yzpDrag);
+			$elm.bind("mousemove",function(event){
+				if($scope.yzpDrag.onDrag){
+					$scope.$apply(function(){
+						$scope.$eval($attrs.yzpDrag);
 					})
 				}
 			});
 			$elm.bind("mouseup",function(){
-				$scope.onDrag=false;
+				$scope.yzpDrag.onDrag=false;
 			})
 		}
 	}
-})
+});
